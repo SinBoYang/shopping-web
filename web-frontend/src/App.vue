@@ -6,10 +6,12 @@
         :users="users"
         :products="products"
         :cart="cart"
+        :isLoggedIn="isLoggedIn"
         @update-users="updateUsers"
         @login="login"
         @add-to-cart="addToCart"
         @remove-from-cart="removeFromCart"
+        @clear-cart="clearCart"
       />
     </main>
   </div>
@@ -28,16 +30,30 @@ export default {
         { username: "user1", password: "password1" },
         { username: "user2", password: "password2" },
       ],
-      products: [
-        { id: 1, name: "Product 1", price: "$10", image: "path/to/image1.jpg" },
-        { id: 2, name: "Product 2", price: "$20", image: "path/to/image2.jpg" },
-        { id: 3, name: "Product 3", price: "$30", image: "path/to/image3.jpg" },
-      ],
+      products: [], // 初始化為空數組
       cart: [],
       isLoggedIn: false,
     };
   },
+  created() {
+    this.fetchProducts(); // 在組件創建時獲取商品資料
+  },
   methods: {
+    fetchProducts() {
+      fetch("http://localhost:3000/api/products")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch products");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          this.products = data.products; // 將後端返回的商品資料存入 products
+        })
+        .catch((error) => {
+          console.error("Failed to fetch products:", error);
+        });
+    },
     updateUsers(newUsers) {
       this.users = newUsers;
     },
@@ -54,6 +70,9 @@ export default {
     },
     removeFromCart(product) {
       this.cart = this.cart.filter((item) => item.id !== product.id);
+    },
+    clearCart() {
+      this.cart = []; // 清空購物車
     },
   },
 };

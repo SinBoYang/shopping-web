@@ -39,10 +39,11 @@ export default {
       );
 
       if (user) {
-        // 假設登入成功，儲存token並跳轉到首頁
+        // 假設登入成功，儲存 token 並跳轉到首頁
         const token = "dummy-token";
         localStorage.setItem("token", token);
-        this.$router.push("/");
+        this.$emit("login"); // 通知父組件用戶已登入
+        this.$router.push("/"); // 跳轉到首頁
       } else {
         this.errorMessage = "Login failed: Invalid username or password";
       }

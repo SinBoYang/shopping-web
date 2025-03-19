@@ -1,0 +1,35 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "藍色圍巾",
+        "price": "$10",
+        "image": "https://down-tw.img.susercontent.com/file/1699d48231d5433768ecb558f60c1b4b"
+      },
+      {
+        "id": 2,
+        "name": "皮褲",
+        "price": "$20",
+        "image": "https://th.bing.com/th/id/OIP._qRzEpMWMPpkwuM5P8j53wHaKd?rs=1&pid=ImgDetMain"
+      },
+      {
+        "id": 3,
+        "name": "維利炸醬麵",
+        "price": "$30",
+        "image": "https://th.bing.com/th/id/R.d85c5c71b39ab85bd16af8fbcad62aa9?rik=FG3AHBLUhy%2f33A&pid=ImgRaw&r=0"
+      },
+      {
+        "id": 4,
+        "name": "Product 2",
+        "price": "$20",
+        "image": "path/to/image2.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Product 2",
+        "price": "$20",
+        "image": "path/to/image2.jpg"
+      }
+
+    ]
+  }
