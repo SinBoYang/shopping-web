@@ -52,38 +52,6 @@ export default {
   gap: 1rem;
 }
 
-.product-item {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: calc(33.333% - 1rem);
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.product-item h2 {
-  margin-bottom: 0.5rem;
-}
-
-.product-item p {
-  margin-bottom: 1rem;
-}
-
-button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #333;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #555;
-}
-
 input[type="text"] {
   width: 100%;
   padding: 0.5rem;

@@ -9,17 +9,47 @@
         <button @click="removeFromCart(item)">Remove</button>
       </div>
     </div>
+    <div v-if="cart.length > 0" class="checkout-section">
+      <h2>Total: {{ totalPrice }}</h2>
+      <button @click="checkout">Checkout</button>
+      <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["cart"],
+  props: ["cart", "isLoggedIn"],
+  data() {
+    return {
+      errorMessage: "",
+    };
+  },
+  computed: {
+    totalPrice() {
+      // 計算購物車總價
+      return this.cart
+        .reduce((total, item) => {
+          const price = parseFloat(item.price.replace("$", ""));
+          return total + price;
+        }, 0)
+        .toFixed(2);
+    },
+  },
   methods: {
     removeFromCart(item) {
       this.$emit("remove-from-cart", item);
-    }
-  }
+    },
+    checkout() {
+      if (!this.isLoggedIn) {
+        this.errorMessage = "You must be logged in to checkout.";
+        return;
+      }
+      // 模擬結帳邏輯
+      alert("Checkout successful! Thank you for your purchase.");
+      this.$emit("clear-cart"); // 清空購物車
+    },
+  },
 };
 </script>
 
@@ -64,5 +94,15 @@ button {
 
 button:hover {
   background-color: #555;
+}
+
+.checkout-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  margin-top: 1rem;
 }
 </style>
