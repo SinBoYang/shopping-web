@@ -20,15 +20,21 @@
       },
       {
         "id": 4,
-        "name": "Product 2",
-        "price": "$20",
-        "image": "path/to/image2.jpg"
+        "name": "乾爹",
+        "price": "$5090",
+        "image": "https://old.dp.toys//static/team/2025/0212/image/20250212/20250212103013_10616.png"
       },
       {
         "id": 5,
-        "name": "Product 2",
-        "price": "$20",
-        "image": "path/to/image2.jpg"
+        "name": "微醺林襄",
+        "price": "$1212121212",
+        "image": "https://media.nownews.com/nn_media/thumbnail/2024/08/1723723910957-380350b4fa8c467dbb8001f137f4be09-800x450.webp?unShow=false"
+      }
+      ,{
+        "id": 6,
+        "name": "黑絲誘惑",
+        "price": "$6969",
+        "image": "https://media.etmall.com.tw/nximg/00100004029/100004029636/78cb37c2-dcd2-4ff7-b163-a9640b18ed1c.jpg"
       }
 
     ]
